@@ -7,13 +7,12 @@
 RTT is a collection of **Recurrent Template Tools** that occur repeatedly in our `C++17` and
 onward projects.
 
-<!--
 ## Status
 
-UNCOMMENT WHEN CI IS READY
 CircleCI :
-[![CircleCI](https://circleci.com/gh/jfalcou/rtt.svg?style=svg&circle-token=8482adcf5f6785a67d19cf73b6fd4959d53e0e25)](https://circleci.com/gh/jfalcou/rtt)
+[![CircleCI](https://circleci.com/gh/compilaction/rtt/tree/master.svg?style=svg&circle-token=d22219e819cf19e6472703ddb45c27af6d96006c)](https://circleci.com/gh/compilaction/rtt/tree/master)
 
+<!--
 AppVeyor :
 [![Build status](https://ci.appveyor.com/api/projects/status/020yd3e6dwhu4dae/branch/master?svg=true)](https://ci.appveyor.com/project/jfalcou/rtt/branch/master)
 -->

@@ -7,9 +7,9 @@
   SPDX-License-Identifier: MIT
 **/
 //==================================================================================================
-#ifndef RTT_HPP_INCLUDED
-#define RTT_HPP_INCLUDED
+#ifndef RTT_TYPE_HPP_INCLUDED
+#define RTT_TYPE_HPP_INCLUDED
 
-#include <rtt/type.hpp>
+#include <rtt/type/constant.hpp>
 
 #endif

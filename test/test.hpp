@@ -7,9 +7,23 @@
   SPDX-License-Identifier: MIT
 **/
 //==================================================================================================
-#ifndef RTT_HPP_INCLUDED
-#define RTT_HPP_INCLUDED
+#ifndef TEST_TEST_HPP
+#define TEST_TEST_HPP
 
-#include <rtt/type.hpp>
+#define TTS_USE_CUSTOM_DRIVER
+#include <tts/tts.hpp>
+
+int main(int argc, char **argv)
+{
+  std::cout << "[RTT] - Assertions: ";
+#ifdef NDEBUG
+  std::cout << "Disabled\n";
+#else
+  std::cout << "Enabled\n";
+#endif
+
+  ::tts::env runtime(argc, argv, std::cout);
+  return ::tts::run(runtime, ::tts::detail::suite, 0, 0);
+}
 
 #endif

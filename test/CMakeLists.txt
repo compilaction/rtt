@@ -8,7 +8,8 @@
 include(make_unit)
 
 set ( SOURCES
-      # LIST OF CPP FOR UNIT TESTS
+      container/literal_string.cpp
+      type/constant.cpp
     )
 
-# make_unit( "rtt" ${SOURCES})
+make_unit( "rtt" ${SOURCES})

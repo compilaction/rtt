@@ -5,9 +5,10 @@
 ##  Licensed under the MIT License <http://opensource.org/licenses/MIT>.
 ##  SPDX-License-Identifier: MIT
 ##==================================================================================================
-include(make_unit)
+set ( SOURCES
+#
+    )
 
-add_subdirectory(container)
-add_subdirectory(doc)
-add_subdirectory(misc)
-add_subdirectory(type)
+#make_unit( "misc" ${SOURCES})
+
+check_failure( "misc.failure" constexpr_assert.cpp )

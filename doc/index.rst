@@ -12,6 +12,4 @@ onward projects.
    install
    howto
    reference
-   extension
-   rationale
 

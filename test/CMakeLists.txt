@@ -13,3 +13,6 @@ set ( SOURCES
     )
 
 make_unit( "rtt" ${SOURCES})
+
+
+check_failure( "rtt" misc/constexpr_assert.cpp )

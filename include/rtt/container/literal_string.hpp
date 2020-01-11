@@ -11,7 +11,7 @@
 #define RTT_CONTAINER_LITERAL_STRING_HPP_INCLUDED
 
 #include <rtt/container/literal_string_view.hpp>
-#include <rtt/constexpr_assert.hpp>
+#include <rtt/misc/constexpr_assert.hpp>
 #include <iostream>
 
 namespace rtt

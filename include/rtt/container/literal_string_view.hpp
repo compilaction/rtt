@@ -10,7 +10,7 @@
 #ifndef RTT_CONTAINER_LITERAL_STRING_VIEW_HPP_INCLUDED
 #define RTT_CONTAINER_LITERAL_STRING_VIEW_HPP_INCLUDED
 
-#include <rtt/constexpr_assert.hpp>
+#include <rtt/misc/constexpr_assert.hpp>
 #include <iostream>
 
 namespace rtt

@@ -78,9 +78,15 @@ function(check_failure root)
     string(REPLACE "\\"   "." base ${base})
     set(test "${root}.${base}")
 
+    if( MSVC )
+      set( options /std:c++latest /W3 /EHsc)
+    else()
+      set( options -std=c++17 -Wall -Wno-missing-braces )
+    endif()
+
     set( test_lib "${test}_lib")
     add_library( ${test_lib} OBJECT EXCLUDE_FROM_ALL ${file})
-    target_compile_options  ( ${test_lib} PUBLIC ${_TestOptions} )
+    target_compile_options  ( ${test_lib} PUBLIC ${options} )
 
     add_test( NAME ${test}
               COMMAND ${CMAKE_COMMAND} --build . --target ${test_lib} --config $<CONFIGURATION>
@@ -105,7 +111,7 @@ function(check_failure root)
                         )
 
     add_dependencies(unit ${test})
-    add_parent_target(${test})
+    add_target_parent(${test})
 
   endforeach()
 endfunction()

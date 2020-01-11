@@ -7,10 +7,10 @@
   SPDX-License-Identifier: MIT
 **/
 //==================================================================================================
-#ifndef RTT_HPP_INCLUDED
-#define RTT_HPP_INCLUDED
+#ifndef RTT_CONTAINER_HPP_INCLUDED
+#define RTT_CONTAINER_HPP_INCLUDED
 
-#include <rtt/type.hpp>
-#include <rtt/container.hpp>
+#include <rtt/container/literal_string.hpp>
+#include <rtt/container/literal_string_view.hpp>
 
 #endif

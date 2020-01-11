@@ -10,6 +10,7 @@
 #ifndef RTT_CONTAINER_LITERAL_STRING_VIEW_HPP_INCLUDED
 #define RTT_CONTAINER_LITERAL_STRING_VIEW_HPP_INCLUDED
 
+#include <rtt/constexpr_assert.hpp>
 #include <iostream>
 
 namespace rtt
@@ -70,6 +71,7 @@ namespace rtt
 
     constexpr auto operator[](int i) const noexcept -> decltype(std::declval<StringType>()[0])
     {
+      RTT_CONSTEXPR_ASSERT(i<count());
       return content_[i+pos_];
     }
 
@@ -81,7 +83,7 @@ namespace rtt
   template <typename StringType>
   std::ostream& operator<<( std::ostream& os, literal_string_view<StringType> const& s)
   {
-    for(int i=0;i<s.count();++i) os << s[i];
+    for(auto c : s) os << c;
     return os;
   }
 }

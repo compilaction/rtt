@@ -11,6 +11,7 @@
 #define RTT_CONTAINER_LITERAL_STRING_HPP_INCLUDED
 
 #include <rtt/container/literal_string_view.hpp>
+#include <rtt/constexpr_assert.hpp>
 #include <iostream>
 
 namespace rtt
@@ -32,13 +33,13 @@ namespace rtt
     constexpr literal_string()                noexcept : content_{} {}
     constexpr literal_string(const_pointer ptr) noexcept
     {
-      for(int i = 0;i != N; ++i)
+      for(int i = 0;i != count(); ++i)
         content_[i] = ptr[i];
     }
 
     constexpr literal_string(literal_string const& other) noexcept
     {
-      for(int i = 0;i != N; ++i)
+      for(int i = 0;i != count(); ++i)
         content_[i] = other[i];
     }
 
@@ -47,14 +48,14 @@ namespace rtt
 
     constexpr auto operator==(literal_string const& other) const noexcept
     {
-      for(int i = 0;i != N; ++i)
+      for(int i = 0;i != count(); ++i)
         if( content_[i] != other[i]) return false;
       return true;
     }
 
     constexpr auto operator!=(literal_string const& other) const noexcept
     {
-      for(int i = 0;i != N; ++i)
+      for(int i = 0;i != count(); ++i)
         if( content_[i] == other[i]) return false;
       return true;
     }
@@ -89,7 +90,11 @@ namespace rtt
 
     constexpr operator const_pointer() const noexcept { return begin();    }
 
-    constexpr const_reference operator[](int i) const noexcept { return content_[i]; }
+    constexpr const_reference operator[](int i) const noexcept
+    {
+      RTT_CONSTEXPR_ASSERT(i<count());
+      return content_[i];
+    }
 
     private:
     char_type content_[N] {};
@@ -121,7 +126,7 @@ namespace rtt
   template <typename CharType, int N>
   std::ostream& operator<<( std::ostream& os, literal_string<CharType,N> const& s)
   {
-    for(int i=0;i<s.count();++i) os << s[i];
+    for(auto c : s) os << c;
     return os;
   }
 

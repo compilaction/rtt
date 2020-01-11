@@ -9,7 +9,7 @@ related tasks. To use those components, include the ``rtt/misc.hpp`` file.
 Macros
 ^^^^^^
 
-.. _rtt-constexpr-assert:
+.. _rtt-misc-constexpr-assert:
 
 .. doxygendefine:: RTT_CONSTEXPR_ASSERT
    :project: rtt

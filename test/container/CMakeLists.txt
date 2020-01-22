@@ -5,9 +5,8 @@
 ##  Licensed under the MIT License <http://opensource.org/licenses/MIT>.
 ##  SPDX-License-Identifier: MIT
 ##==================================================================================================
-include(make_unit)
+set ( SOURCES
+      literal_string.cpp
+    )
 
-add_subdirectory(container)
-add_subdirectory(doc)
-add_subdirectory(misc)
-add_subdirectory(type)
+make_unit( "container" ${SOURCES})

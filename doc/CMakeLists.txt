@@ -58,7 +58,10 @@ add_custom_command( OUTPUT  ${SPHINX_INDEX_FILE}
                     ${CMAKE_CURRENT_SOURCE_DIR}/index.rst
                     ${CMAKE_CURRENT_SOURCE_DIR}/install.rst
                     ${CMAKE_CURRENT_SOURCE_DIR}/reference.rst
+                    ${CMAKE_CURRENT_SOURCE_DIR}/reference/container.rst
+                    ${CMAKE_CURRENT_SOURCE_DIR}/reference/container/literal_string.rst
                     ${CMAKE_CURRENT_SOURCE_DIR}/reference/misc.rst
+                    ${CMAKE_CURRENT_SOURCE_DIR}/reference/types.rst
                     ${CMAKE_CURRENT_SOURCE_DIR}/_static/css/custom.css
                     ${CMAKE_CURRENT_SOURCE_DIR}/_static/logo.png
                     MAIN_DEPENDENCY ${CMAKE_CURRENT_SOURCE_DIR}/conf.py

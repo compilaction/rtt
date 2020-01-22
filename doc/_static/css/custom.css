@@ -37,3 +37,11 @@ code, .rst-content tt, .rst-content code
 {
   background: #c16511ad;
 }
+
+/* Put some space after Doxygen type properties */
+.rst-content dl:not(.docutils) .property
+{
+    display: inline-block;
+    padding-left: 4px;
+    padding-right: 8px;
+}
